@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Div Archery Game</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archery Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body class="bg-slate-900 flex flex-col items-center justify-center h-screen overflow-hidden font-sans">
 
-<body>
-<div id="score" class="flex justify-center">
-  <div class="text-blue-600 mt-4 border border-black px-4 py-2">
-    Score: 0
-  </div>
-</div>
+    <div id="hud" class="fixed top-5 flex gap-10 text-white text-2xl font-bold z-10">
+        <div>Score: <span id="scoreVal" class="text-yellow-400">0</span></div>
+        <div>Misses: <span id="missVal" class="text-red-500">0</span>/5</div>
+    </div>
 
-<div id="gameArea" class="relative h-[80vh] w-full">
-  <img id="bow" src="bow.png" alt="bow" class="absolute left-[50px] top-1/2 w-[225px] h-auto">
-  <img id="arrow" src="arrow.png" alt="arrow" class="absolute left-[100px] top-1/2 w-[125px] h-auto hidden">
-  <img id="enemy" src="enemy.jpg" alt="enemy" class="absolute right-[100px] top-1/2 w-[100px] h-auto move-up-down">
-  <div id="target"></div>
-</div>
+    <div id="gameContainer" class="relative w-full h-[90vh] cursor-crosshair">
+        <div id="bowWrapper" class="absolute left-10 top-1/2 -translate-y-1/2 pointer-events-none">
+            <img id="bow" src="bow.png" class="w-[225px] h-auto transition-transform duration-75" alt="bow">
+            <div id="arrow" class="absolute top-1/2 left-1/2 -translate-y-1/2 w-16 h-2 bg-orange-700 rounded-full hidden"></div>
+        </div>
+        
+        <div id="target" class="absolute right-20 top-1/2 w-16 h-16 bg-red-600 border-4 border-white rounded-full shadow-lg"></div>
+    </div>
 
+    <div id="gameOver" class="hidden fixed inset-0 bg-black/80 flex flex-col items-center justify-center text-white z-50">
+        <h1 class="text-6xl font-black mb-4">GAME OVER</h1>
+        <p class="text-xl mb-8">Final Score: <span id="finalScore">0</span></p>
+        <button onclick="location.reload()" class="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-3 rounded-full font-bold transition">PLAY AGAIN</button>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
