@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Div Archery Game</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div id="score" class="flex justify-center">
+  <div class="text-blue-600 mt-4 border border-black px-4 py-2">
+    Score: 0
+  </div>
+</div>
+
+<div id="gameArea" class="relative h-[80vh] w-full">
+  <img id="bow" src="bow.png" alt="bow" class="absolute left-[50px] top-1/2 w-[225px] h-auto">
+  <img id="arrow" src="arrow.png" alt="arrow" class="absolute left-[100px] top-1/2 w-[125px] h-auto hidden">
+  <img id="enemy" src="enemy.jpg" alt="enemy" class="absolute right-[100px] top-1/2 w-[100px] h-auto move-up-down">
+  <div id="target"></div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

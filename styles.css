@@ -1,0 +1,16 @@
+
+.move-up-down {
+  animation: moveUpDown 3s linear infinite;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-300px);
+  }
+  50% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(-300px);
+  }
+}
